@@ -1,11 +1,7 @@
-import Button from "@/shared/ui/Button";
+import AppRouter from "./providers/router/ui/AppRouter";
 
 const App = () => {
-    return (
-        <div>
-            <Button />
-        </div>
-    );
+    return <AppRouter />;
 };
 
 export default App;

@@ -1,4 +1,5 @@
 import { HomePage } from "@/pages/Home";
+import Login from "@/pages/Login/ui/Login";
 import type { RouteProps } from "react-router";
 
 const AppRoutes = {
@@ -17,5 +18,9 @@ export const routeConfig: RouteProps[] = [
     {
         path: routePaths[AppRoutes.HOME],
         element: <HomePage />,
+    },
+    {
+        path: routePaths[AppRoutes.LOGIN],
+        element: <Login />,
     },
 ];
