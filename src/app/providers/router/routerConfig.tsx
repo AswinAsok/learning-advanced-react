@@ -1,5 +1,5 @@
 import { HomePage } from "@/pages/Home";
-import Login from "@/pages/Login/ui/Login";
+import LoginPage from "@/pages/Login/ui/LoginPage";
 import type { RouteProps } from "react-router";
 
 const AppRoutes = {
@@ -21,6 +21,6 @@ export const routeConfig: RouteProps[] = [
     },
     {
         path: routePaths[AppRoutes.LOGIN],
-        element: <Login />,
+        element: <LoginPage />,
     },
 ];
