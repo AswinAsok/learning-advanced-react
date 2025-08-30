@@ -2,7 +2,7 @@ import { useTheme } from "@/shared/config";
 import { Link } from "react-router";
 import styles from "./HomePage.module.scss";
 import { useTranslation } from "react-i18next";
-import { Button, Input } from "@/shared/ui";
+import { AppIcon, Button, Input } from "@/shared/ui";
 import GermanyIcon from "@/shared/assets/icons/German.svg?react";
 import SearchIcon from "@/shared/assets/icons/Search.svg?react";
 
@@ -16,7 +16,10 @@ const HomePage = () => {
     return (
         <>
             <h1 className={styles.title}>{t("hello")}</h1>
-            <Input placeholder="search..." Icon={<SearchIcon />} />
+            <Input
+                placeholder="search..."
+                Icon={<AppIcon theme="background" Icon={SearchIcon} filled />}
+            />
             <Button
                 onClick={() => {
                     toggleTheme();
