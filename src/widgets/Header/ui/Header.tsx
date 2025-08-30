@@ -5,13 +5,15 @@ import UsersIcon from "@/shared/assets/icons/Users.svg?react";
 import styles from "./Header.module.scss";
 import { AppIcon, Button, Input } from "@/shared/ui";
 
-import { useTheme } from "@/shared/config";
 import { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 import { ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
 import { useNavigate } from "react-router";
 import { routePaths } from "@/shared/config/router/routerPaths";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
+    const { t } = useTranslation();
+
     const navigate = useNavigate();
 
     const handleLoginClick = () => {
@@ -32,16 +34,16 @@ export const Header = () => {
             <div className={styles.section}>
                 <Input
                     rounded
-                    placeholder={"Search By"}
+                    placeholder={t("header.searchBy")}
                     Icon={<AppIcon size={18} Icon={SearchIcon} theme="background" />}
                 />
             </div>
 
             <div className={styles.section}>
-                <Button theme="secondary">Cart</Button>
+                <Button theme="secondary">{t("header.cart")}</Button>
                 <Button theme="outline" onClick={handleLoginClick}>
                     <AppIcon Icon={UsersIcon} />
-                    <span>Login</span>
+                    <span>{t("header.login")}</span>
                 </Button>
 
                 <ThemeSwitcher />

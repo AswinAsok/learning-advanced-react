@@ -1,3 +1,7 @@
 {
-    "hello": "Hallo Welt"
+    "header": {
+        "cart": "Warenkorb",
+        "searchBy": "Suchen nach",
+        "login": "Anmelden"
+    }
 }
