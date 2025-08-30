@@ -2,6 +2,8 @@ import { useTheme } from "@/shared/config";
 import { Link } from "react-router";
 import styles from "./HomePage.module.scss";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/shared/ui";
+import GermanyIcon from "@/shared/assets/icons/German.svg?react";
 
 const HomePage = () => {
     const { toggleTheme } = useTheme();
@@ -13,21 +15,23 @@ const HomePage = () => {
     return (
         <>
             <h1 className={styles.title}>{t("hello")}</h1>
-            <button
+            <Button
                 onClick={() => {
                     toggleTheme();
                 }}
             >
                 Change Theme
-            </button>
+            </Button>
 
-            <button
+            <Button
+                theme="outline"
                 onClick={() => {
                     changeLanguage();
                 }}
             >
+                <GermanyIcon width={20} height={20} style={{ marginRight: 5 }} />
                 {i18n.language}
-            </button>
+            </Button>
             <Link to="/login">Go to Login Page</Link>
         </>
     );

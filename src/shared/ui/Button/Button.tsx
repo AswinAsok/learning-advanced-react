@@ -1,4 +1,6 @@
 import type { ButtonHTMLAttributes } from "react";
+import styles from "./Button.module.scss";
+import { cn } from "@/shared/lib";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
 type ButtonForm = "rounded" | "pill" | "circle";
@@ -14,6 +16,24 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = (props: ButtonProps) => {
-    const { children } = props;
-    return <div>{children}</div>;
+    const {
+        children,
+        className,
+        size = "sm",
+        theme = "primary",
+        form = "pill",
+        disabled = false,
+        ...rest
+    } = props;
+    return (
+        <button
+            {...rest}
+            disabled={disabled}
+            className={cn(styles.button, className, styles[size], styles[form], styles[theme], {
+                [styles.disabled]: disabled,
+            })}
+        >
+            {children}
+        </button>
+    );
 };
