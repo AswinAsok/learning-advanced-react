@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import { routeConfig } from "../routerConfig";
 import { Suspense } from "react";
 
-const AppRouter = () => {
+export const AppRouter = () => {
     return (
         <Routes>
             {routeConfig.map(({ path, element }) => (
@@ -19,5 +19,3 @@ const AppRouter = () => {
         </Routes>
     );
 };
-
-export default AppRouter;
