@@ -1,7 +1,7 @@
 import LogoIcon from "@/shared/assets/icons/Logo.svg?react";
 import MapPin from "@/shared/assets/icons/MapPin.svg?react";
 import SearchIcon from "@/shared/assets/icons/Search.svg?react";
-import UsersIcon from "@/shared/assets/icons/Search.svg?react";
+import UsersIcon from "@/shared/assets/icons/Users.svg?react";
 import CircleIcon from "@/shared/assets/icons/Circle.svg?react";
 import GermanyIcon from "@/shared/assets/icons/German.svg?react";
 import EnglishIcon from "@/shared/assets/icons/English.svg?react";
@@ -23,7 +23,7 @@ export const Header = () => {
             <div className={styles.section}>
                 <LogoIcon className={styles.logo} />
 
-                <Button>
+                <Button theme="ghost">
                     <AppIcon Icon={MapPin} />
                     <span>10115 New York</span>
                 </Button>

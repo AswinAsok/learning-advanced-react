@@ -1,5 +1,7 @@
-import { cn } from "@/shared/lib";
 import type { FunctionComponent, SVGProps } from "react";
+
+import { cn } from "@/shared/lib";
+
 import styles from "./AppIcon.module.scss";
 
 type AppIconTheme = "clean" | "background";
@@ -26,8 +28,7 @@ export const AppIcon = (props: AppIconProps) => {
     );
 
     if (theme === "background") {
-        return <div className={styles.wrapped}>{AppIcon}</div>;
+        return <div className={styles.wrapper}>{AppIcon}</div>;
     }
-
     return AppIcon;
 };
