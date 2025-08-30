@@ -4,7 +4,7 @@ import { languageIconList, type SupportedLngsType } from "@/shared/config";
 
 export const LanguageSwitcher = () => {
     const toggleLanguage = () => {
-        i18n.changeLanguage(i18n.language === "en" ? "en" : "de");
+        i18n.changeLanguage(i18n.language === "en" ? "de" : "en");
     };
 
     const currentLanguage = i18n.language as SupportedLngsType;
