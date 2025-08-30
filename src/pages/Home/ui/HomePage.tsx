@@ -1,42 +1,15 @@
-import { useTheme } from "@/shared/config";
 import { Link } from "react-router";
 import styles from "./HomePage.module.scss";
 import { useTranslation } from "react-i18next";
-import { AppIcon, Button, Input } from "@/shared/ui";
-import GermanyIcon from "@/shared/assets/icons/German.svg?react";
-import SearchIcon from "@/shared/assets/icons/Search.svg?react";
+import { Header } from "@/widgets";
 
 const HomePage = () => {
-    const { toggleTheme } = useTheme();
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
-    const changeLanguage = () => {
-        void i18n.changeLanguage(i18n.language === "en" ? "de" : "en");
-    };
     return (
         <>
+            <Header />
             <h1 className={styles.title}>{t("hello")}</h1>
-            <Input
-                placeholder="search..."
-                Icon={<AppIcon theme="background" Icon={SearchIcon} filled />}
-            />
-            <Button
-                onClick={() => {
-                    toggleTheme();
-                }}
-            >
-                Change Theme
-            </Button>
-
-            <Button
-                theme="outline"
-                onClick={() => {
-                    changeLanguage();
-                }}
-            >
-                <GermanyIcon width={20} height={20} style={{ marginRight: 5 }} />
-                {i18n.language}
-            </Button>
             <Link to="/login">Go to Login Page</Link>
         </>
     );
