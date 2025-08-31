@@ -1,3 +1,4 @@
+import { PageError } from "@/widgets/PageError/PageError";
 import * as React from "react";
 
 interface ErrorBoundaryProps {
@@ -25,7 +26,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
     render() {
         if (this.state.hasError) {
             // You can render any custom fallback UI
-            return <div>Error</div>;
+            return <PageError />;
         }
 
         return this.props.children;
