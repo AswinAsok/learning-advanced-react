@@ -1,4 +1,4 @@
-import { PageError } from "@/widgets/PageError/PageError";
+import { PageError } from "@/widgets/PageError/ui/PageError";
 import * as React from "react";
 
 interface ErrorBoundaryProps {
@@ -16,6 +16,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
     }
 
     static getDerivedStateFromError(error: Error) {
+        console.log(error);
         return { hasError: true };
     }
 
