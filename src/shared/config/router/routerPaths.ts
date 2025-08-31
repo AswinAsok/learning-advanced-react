@@ -10,6 +10,5 @@ export const routePaths: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: "/",
     [AppRoutes.LOGIN]: "/login",
 
-    // last
     [AppRoutes.NOT_FOUND]: "*",
 };
